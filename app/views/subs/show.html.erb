@@ -4,7 +4,10 @@
 <% end %></h1>
 <h3><%= @sub.description %></h3>
 
-
+<h4>Posts Native to This Sub</h4>
 <%= render 'posts', sub: @sub %>
+
+<h4>Shared Posts</h4>
+<%= render 'shared_posts', sub: @sub %>
 
 <%= link_to "Create New Post", new_sub_post_url(@sub.id) %>

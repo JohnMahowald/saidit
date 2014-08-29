@@ -1,0 +1,6 @@
+<ul>
+  <% sub.shared_posts.order(:created_at).each do |post| %>
+    <% next if post.sub_id == sub.id %>
+    <li><%= link_to post.title, post_url(post) %></li>  
+  <% end %>
+</ul>

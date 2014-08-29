@@ -48,3 +48,11 @@ div.login-status {
 form * {
   display: block;
 }
+
+input[type=checkbox] {
+  display: inline;
+}
+
+pre {
+  font-family: helvetica;
+}
