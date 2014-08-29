@@ -1,0 +1,10 @@
+<h1><%= @sub.title %></h1>
+
+<%= render 'form', sub: @sub %>
+
+<% if @sub.is_moderator?(current_user) %>
+  <%= button_to "Delete Sub", 
+        sub_url(@sub), 
+        method: :delete, 
+        data: { confirm: "Are you sure?" } %>
+<% end %>

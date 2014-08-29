@@ -1,0 +1,10 @@
+<h1><%= @sub.title %>
+<% if logged_in? && @sub.is_moderator?(current_user) %>
+  <%= link_to "Edit", edit_sub_url(@sub), method: :get %>
+<% end %></h1>
+<h3><%= @sub.description %></h3>
+
+
+<%= render 'posts', sub: @sub %>
+
+<%= link_to "Create New Post", new_sub_post_url(@sub.id) %>

@@ -1,0 +1,30 @@
+<% action = post.persisted? ? post_url(post) : posts_url %>
+<% method = post.persisted? ? 'PATCH' : 'POST' %>
+<% button_text = post.persisted? ? "Commit Changes" : "Author Post" %>
+
+<form action="<%= action %>", method='POST'>
+  <input type='hidden', name='_method', value='<%= method %>'>
+  
+  <%= auth_token %>
+  
+  <input type="hidden", name="post[sub_id]", value="<%= post.sub_id %>"></input>
+  <label for='title'>Post Title (required)</label>
+  <input type="text", 
+         name="post[title]", 
+         id="title",
+         value='<%= post.title %>'></input>
+         
+  <label for='url'>Post URL</label>
+  <input type="text", 
+         name="post[url]", 
+         id="url",
+         value='<%= post.url %>'></input>
+         
+  <label for='content'>Content</label>
+  <textarea name='post[content]' 
+            id="content",
+            rows="10",
+            cols="50"><%= post.content %></textarea>
+
+  <input type='submit', value="<%= button_text %>">
+</form>

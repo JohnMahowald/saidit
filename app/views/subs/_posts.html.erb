@@ -1,0 +1,5 @@
+<ul>
+  <% sub.posts.order(:created_at).each do |post| %>
+    <li><%= link_to post.title, post_url(post) %></li>
+  <% end %>
+</ul>

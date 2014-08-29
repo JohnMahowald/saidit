@@ -1,0 +1,10 @@
+<h1><%= link_to @post.sub.title, sub_url(@post.sub) %></h1>
+<h3><%= @post.title %></h3>
+<%= link_to @post.url, @post.url %>
+<div><%= @post.content %></div>
+
+
+<br><br>
+<% if logged_in? && @post.is_author?(current_user) %>
+  <%= button_to "Edit Post", edit_post_url(@post), method: :get %>
+<% end %>

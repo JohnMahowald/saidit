@@ -1,0 +1,9 @@
+<h1>Bluit</h1>
+
+<h3>Subs</h3>
+
+<ul>
+  <% @subs.each do |sub| %>
+    <li><%= link_to(sub.title, sub_url(sub)) %></li>
+  <% end %>
+</ul>

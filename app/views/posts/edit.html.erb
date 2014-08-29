@@ -1,0 +1,10 @@
+<h1>Editing Post: <%= @post.title %></h1>
+
+<%= render 'form', post: @post %>
+
+<% if @post.is_author?(current_user) %>
+  <%= button_to "Delete Post", 
+        post_url(@post), 
+        method: :delete, 
+        data: { confirm: "Are you sure?" } %>
+<% end %>
