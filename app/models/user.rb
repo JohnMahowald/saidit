@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   
   has_many :subs, foreign_key: :moderator_id, dependent: :destroy
   has_many :posts, foreign_key: :author_id, dependent: :destroy
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
   
   def self.find_by_credentials(username, password)
     user = self.find_by_username(username)

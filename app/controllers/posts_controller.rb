@@ -31,7 +31,6 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @post.sub_id = params[:sub_id]
-    # fail
     render :new
   end
   

@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   
   has_many :post_subs, inverse_of: :post
   has_many :shared_subs, through: :post_subs, source: :sub
+  has_many :comments, dependent: :destroy
   
   def is_author?(user)
     author.id == user.id
