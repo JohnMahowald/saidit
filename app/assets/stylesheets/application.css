@@ -20,8 +20,18 @@ body {
 }
 
 div.top_menu {
-  left: 0px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
   display: block;
+}
+
+div.login-status {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  text-align: right;
+  margin-right: 20px;
 }
 
 div.errors {
@@ -31,18 +41,15 @@ div.errors {
   margin: auto;
 }
 
+ul.nobullet {
+  list-style-type: none;
+}
+
 div.notice {
   width: 40%;
   background: rgba(0, 255, 0, 0.5);
   padding: 2px;  
   margin: auto;
-}
-
-div.login-status {
-  position: absolute;
-  right: 0px;
-  text-align: right;
-  margin-right: 20px;
 }
 
 form * {

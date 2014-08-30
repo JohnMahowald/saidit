@@ -1,13 +1,11 @@
 <h1><%= link_to @post.sub.title, sub_url(@post.sub) %></h1>
-<h3><%= @post.title %></h3>
-<%= link_to @post.url, @post.url %>
+<h3><%= link_to @post.title, @post.url %></h3>
+submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.author.username, user_url(@post.author) %>
 <div><pre><%= @post.content %></pre></div>
 
-<ul>
-  <% @post.top_level_comments.each do |comment| %>
-    <li><%= render 'comments/comment', comment: comment %></li>
-  <% end %>
-</ul>
+<% @post.top_level_comments.each do |comment| %>
+  <%= render 'comments/comment', comment: comment %>
+<% end %>
 
 <br><br>
 <% if logged_in? %>

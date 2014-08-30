@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
   validates :title, :sub_id, :author_id, :post_subs, presence: true
+
+  after_create :ensure_post_url
   
   belongs_to :author, class_name: 'User', foreign_key: :author_id
   belongs_to :sub
@@ -16,5 +18,11 @@ class Post < ActiveRecord::Base
   
   def is_author?(user)
     author.id == user.id
+  end
+
+  private
+
+  def ensure_post_url
+    self.url ||= post_url(self)
   end
 end

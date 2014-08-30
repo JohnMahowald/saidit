@@ -15,25 +15,13 @@ class UsersController < ApplicationController
     end
   end
   
-  def destroy
-  end
-  
-  def edit
-  end
-  
-  def index
-  end
-  
   def new
     @user = User.new
     render :new
   end
   
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     render :show
-  end
-  
-  def update
   end
 end

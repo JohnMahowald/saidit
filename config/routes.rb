@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'users#new'
   
-  resources :users
+  resources :users, only: [:create, :new, :show]
   resource :session, only: [:create, :destroy, :new]
   
   resources :subs do

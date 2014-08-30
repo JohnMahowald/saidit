@@ -1,6 +1,10 @@
 <div class='comment'>
-  <p><strong><%= comment.author.username %> says:</strong>
-    (<%= comment.created_at %>)</p>
+  <p>
+    <strong>
+      <%= link_to comment.author.username, user_url(comment.author) %>
+    </strong>
+    (<%= time_ago_in_words(comment.created_at) %> ago)
+  </p>
   <p><%= comment.content %></p>
   
   <%= link_to "Post Reply", comment_url(comment) %>

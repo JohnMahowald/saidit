@@ -11,4 +11,4 @@ default: &default
 
 development:
   <<: *default
-  database: blueit_development
+  database: bluit_development
