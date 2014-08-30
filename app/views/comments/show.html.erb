@@ -1,6 +1,11 @@
 <h1>Reply to <%= @comment.author.username %></h1>
 
-<%= render 'comment', comment: @comment %>
+<%= render(
+      partial: 'comment', locals: {
+              comment: @comment,
+              comments_hash: @comments_hash
+            }
+          ) %>
 
 <% new_comment = @comment.child_comments.new(post_id: @comment.post_id) %>
 
