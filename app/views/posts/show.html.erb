@@ -1,11 +1,24 @@
+<% @all_comments = @post.comments.includes(:author) %>
+<% rendered_comments = @comments_hash[nil] %>
+
 <h1><%= link_to @post.sub.title, sub_url(@post.sub) %></h1>
 <h3><%= link_to @post.title, @post.url %></h3>
 submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= link_to @post.author.username, user_url(@post.author) %>
 <div><pre><%= @post.content %></pre></div>
 
-<% @post.top_level_comments.each do |comment| %>
-  <%= render 'comments/comment', comment: comment %>
-<% end %>
+<ul class="nobullet">
+  <% rendered_comments.each do |rendered_comment| %>
+    <li>
+      <%= render(
+            partial: 'comments/comment',
+            locals: {
+              comment: rendered_comment,
+              comments_hash: @comments_hash
+            }
+          ) %>
+    </li>
+  <% end %>
+</ul>
 
 <br><br>
 <% if logged_in? %>

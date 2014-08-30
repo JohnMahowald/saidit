@@ -16,6 +16,14 @@ class Post < ActiveRecord::Base
     class_name: 'Comment'
   )
   
+  def comments_by_parent_id
+    comments_hash = Hash.new { Array.new }
+    self.comments.includes(:author).each do |comment|
+      comments_hash[comment.parent_comment_id] += [comment]
+    end
+    comments_hash
+  end
+
   def is_author?(user)
     author.id == user.id
   end

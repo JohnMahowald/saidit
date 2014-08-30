@@ -1,7 +1,7 @@
 <% menu_items = [] %>
 <% menu_items << (link_to "Subs", subs_url) %>
 <% if logged_in? %>
-  <% menu_items << (link_to "Dashboard", user_url(current_user)) %>
+  <% menu_items << (link_to current_user.username, user_url(current_user)) %>
   <% menu_items << (link_to "Create Sub", new_sub_url) %>
 <% end %>
 

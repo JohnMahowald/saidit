@@ -17,39 +17,51 @@
 body {
   font-family: helvetica;
   margin-left: 20px;
+  margin-top: 40px;
 }
 
-div.top_menu {
-  position: absolute;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  border: solid blue;
+}
+
+.top_menu {
+  position: fixed;
+  width: 100%;
   top: 10px;
   left: 10px;
   display: block;
 }
 
-div.login-status {
-  position: absolute;
+.login-status {
+  position: fixed;
   top: 10px;
   right: 0px;
   text-align: right;
   margin-right: 20px;
 }
 
-div.errors {
+.errors {
   width: 40%;
   background: rgba(255, 0, 0, 0.5);
   padding: 2px;
   margin: auto;
 }
 
-ul.nobullet {
-  list-style-type: none;
-}
-
-div.notice {
+.notice {
   width: 40%;
   background: rgba(0, 255, 0, 0.5);
   padding: 2px;  
   margin: auto;
+}
+
+ul.nobullet {
+  list-style-type: none;
+  list-style-position: outside
 }
 
 form * {
@@ -62,9 +74,4 @@ input[type=checkbox] {
 
 pre {
   font-family: helvetica;
-}
-
-div.comment {
-  margin-left: 20px;
-  width: 80%;
 }
