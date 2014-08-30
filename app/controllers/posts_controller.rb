@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       flash[:notice] = ["Post created successfully."]
       redirect_to sub_url(@post.sub_id)
     else
-      flash[:errors] = @post.errors.full_messages
+      flash.now[:errors] = @post.errors.full_messages
       render :new
     end
   end
@@ -17,10 +17,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     return unless @post.is_author?(current_user)
-    sub_id = @post.sub_id
     @post.destroy
     flash[:notice] = ["FATAL: Post has been Destroyed!"]
-    redirect_to sub_url(sub_id)
+    redirect_to sub_url(@post.sub_id)
   end
   
   def edit
@@ -40,8 +39,8 @@ class PostsController < ApplicationController
   end
   
   def update
-    @post = Post.find(params[:id])
-    if (@post.is_author?(current_user)) && @post.update_attributes(post_params)
+    @post = current_user.posts.find(params[:id])
+    if @post.update_attributes(post_params)
       flash[:notice] = ["Post updated successfully."]
       redirect_to sub_url(@post.sub)
     else

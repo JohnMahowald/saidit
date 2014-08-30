@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  include BCrypt
-  
   validates :username, :password_digest, :session_token, presence: true
   validates :username, :session_token, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true}
@@ -21,10 +19,6 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
   
-  def ensure_session_token
-    self.session_token ||= self.class.generate_session_token
-  end
-  
   def reset_session_token!
     self.session_token = self.class.generate_session_token
     self.save!
@@ -42,5 +36,9 @@ class User < ActiveRecord::Base
   private
   
   attr_reader :password
+  
+  def ensure_session_token
+    self.session_token ||= self.class.generate_session_token
+  end
   
 end

@@ -1,15 +1,19 @@
-<form action="<%= comments_url %>", method='POST'>
-  <input type="hidden",
-         name="comment[post_id]",
-         value="<%= comment.post_id %>"></input>
-  
+<form action="<%= comments_url %>" method='POST'>
   <%= auth_token %>
+    
+  <input type="hidden"
+         name="comment[post_id]"
+         value="<%= comment.post_id %>"></input>
          
+ <input type="hidden"
+        name="comment[parent_comment_id]"
+        value="<%= comment.parent_comment_id %>"></input>
+  
   <label for='content'>Content</label>
   <textarea name='comment[content]' 
-            id="content",
-            rows="10",
+            id="content"
+            rows="10"
             cols="50"><%= comment.content %></textarea>
 
-  <input type='submit', value="Submit Comment">
+  <input type='submit' value="Submit Comment">
 </form>

@@ -1,0 +1,14 @@
+<div class='comment'>
+  <p><strong><%= comment.author.username %> says:</strong>
+    (<%= comment.created_at %>)</p>
+  <p><%= comment.content %></p>
+  
+  <%= link_to "Post Reply", comment_url(comment) %>
+   
+  <ul>
+    <% comment.child_comments.each do |child| %>
+      <%= render 'comments/comment', comment: child %>
+    <% end %>
+  </ul>
+  
+</div>

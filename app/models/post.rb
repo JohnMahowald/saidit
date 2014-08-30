@@ -8,6 +8,12 @@ class Post < ActiveRecord::Base
   has_many :shared_subs, through: :post_subs, source: :sub
   has_many :comments, dependent: :destroy
   
+  has_many(
+    :top_level_comments,
+    -> { where('parent_comment_id IS NULL') },
+    class_name: 'Comment'
+  )
+  
   def is_author?(user)
     author.id == user.id
   end
