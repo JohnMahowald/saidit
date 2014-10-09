@@ -3,11 +3,8 @@ default: &default
   encoding: unicode
   pool: 5
   timeout: 5000
+  username: John
 
 development:
   <<: *default
   database: saidit_development
-
-production:
-  <<: *default
-  adapter: saidit_production
