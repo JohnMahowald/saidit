@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bcrypt', '~> 3.1.7'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
@@ -18,5 +19,4 @@ gem 'spring',        group: :development
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'bcrypt'
 end

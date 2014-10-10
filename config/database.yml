@@ -1,10 +1,15 @@
-default: &default
+development:
   adapter: postgresql
   encoding: unicode
-  pool: 5
-  timeout: 5000
-  username: John
-
-development:
-  <<: *default
   database: saidit_development
+  pool: 5
+  username: John
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: saidit_test
+  pool: 5
+  username: John
+  password:
