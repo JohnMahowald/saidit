@@ -2,6 +2,8 @@
 
 Saidit is a clone of the basic features of [Reddit](http://www.reddit.com).
 
+* [Live Demo](http://saidit-reddit.herokuapp.com/)
+
 ## Key Features:
 1. Recursive rendering of child comments by mapping comment views in a hash to their parent node.
 2. Generously segmented views keep code DRY allowing login to share boilerplate form data and comments to be recursively rendered within parent.

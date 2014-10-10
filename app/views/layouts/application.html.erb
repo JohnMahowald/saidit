@@ -8,8 +8,12 @@
 </head>
 
 <body>
+  <div class='background-fade'>
 
-<%= render 'layouts/top_menu' %>
+<div class='header'>
+  <%= render 'layouts/top_menu' %>
+</div>
+
 <%= render 'layouts/login_status' %>
   
 <% if flash[:notice] %>
@@ -22,5 +26,6 @@
 
 <%= yield %>
 
+  </div>
 </body>
 </html>
