@@ -19,7 +19,9 @@
 
 
 $(document).ready(function() {
-  $('#guest-login').click( function() {
+  $('#guest-login').click( function(e) {
+    e.preventDefault();
+    
     $('#username').typed({
       strings: ["john@me.com"],
       typeSpeed: 0,

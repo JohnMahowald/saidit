@@ -101,9 +101,17 @@ pre {
   text-align: center;
 }
 
+.login-form-wrapper {
+  background-color: rgba(200, 200, 200, .5);
+  width: 60%;
+  margin: 0 auto;
+  border-radius: 3px;
+  padding: 20px;
+}
+
 .login-form {
   margin: 0 auto;
-  width: 40%;
+  width: 90%;
   text-align: left;
 }
 
@@ -123,5 +131,21 @@ pre {
 }
 
 .login-form label {
+}
+
+#guest-login {
+  width: 100%;
+  background-color: #339966;
+  border: none;
   margin-top: 20px;
+  transition: all .5s;
+}
+
+#guest-login:hover {
+  background-color: #297A52;
+}
+
+#login-button {
+  margin-top: 20px;
+  transition: all .5s;
 }
