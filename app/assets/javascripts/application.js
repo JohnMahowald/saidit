@@ -12,6 +12,34 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require typed
 //= require bootstrap-sprockets
 // require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+  $('#guest-login').click( function() {
+    $('#username').typed({
+      strings: ["john@me.com"],
+      typeSpeed: 0,
+      showCursor: false,
+      attr: 'value',
+      callback: function() {
+        typePassword()
+      }
+    });
+  });
+  
+  function typePassword() {
+    $('#password').typed({
+      strings: ["johnjohn"],
+      typeSpeed: 0,
+      showCursor: false,
+      attr: 'value',
+      callback: function() {
+        $('#login-button').click();
+      }
+    });
+  }
+});
