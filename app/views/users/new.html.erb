@@ -2,5 +2,12 @@
   <h1>Welcome to Saidit</h1>
   <h2>The front page of the internet!</h2>
 
-  <%= render 'shared/credentials', action: users_url, button_text: "Register" %>
+  <%= render 'shared/credentials', 
+    action: users_url, 
+    button_text: "Register",
+    guest: false %>
+    
+  <div class='new-session-redirect'>
+    Alrady a user? <%= link_to 'Sign In', new_session_url %></br>
+    Guest? <%= link_to "Sign In Here", new_session_url %>
 </div>

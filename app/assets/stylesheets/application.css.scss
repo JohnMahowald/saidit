@@ -83,7 +83,7 @@ ul.nobullet {
   list-style-position: outside
 }
 
-form * {
+form>input {
   display: block;
 }
 
@@ -149,3 +149,22 @@ pre {
   margin-top: 20px;
   transition: all .5s;
 }
+
+h3 {
+  font-size: 1.3em;
+  display: inline-block;
+}
+
+.login-form-wrapper>h3 {
+  text-align: center;
+}
+
+h3>a.sigin-in-link {
+  display: inline-block;
+}
+
+.new-user-redirect, .new-session-redirect {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+

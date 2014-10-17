@@ -7,4 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-gues = User.create!(username: "john@me.com", password: 'johnjohn');
+guest = User.create!(username: "john@me.com", password: 'johnjohn');
