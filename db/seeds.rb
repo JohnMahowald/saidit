@@ -8,3 +8,4 @@
 
 
 guest = User.create!(username: "john@me.com", password: 'johnjohn');
+

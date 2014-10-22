@@ -2,7 +2,7 @@
 <% method = sub.persisted? ? 'PATCH' : 'POST' %>
 <% button_text = sub.persisted? ? "Commit Changes" : "Create Sub" %>
 
-<form action="<%= action %>", method='POST'>
+<form class='subs-form' action="<%= action %>", method='POST'>
   <input type='hidden', name='_method', value='<%= method %>'>
   
   <%= auth_token %>
@@ -19,5 +19,5 @@
             rows="10",
             cols="50"><%= sub.description %></textarea>
 
-  <input type='submit', value="<%= button_text %>">
+  <input class='button' type='submit', value="<%= button_text %>">
 </form>
